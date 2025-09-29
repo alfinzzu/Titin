@@ -70,26 +70,33 @@
     <h1>Masukkan Nama</h1>
     <input type="text" id="keywordInput" placeholder="Ketik di sini..." />
     <br>
-    <button onclick="checkKeyword()">ENTER</button>
+    <button onclick="checkKeyword()">Lanjut</button>
     <p class="error" id="errorMsg"></p>
   </div>
 
   <script>
+    const input = document.getElementById("keywordInput");
+    const errorMsg = document.getElementById("errorMsg");
+
     function checkKeyword() {
-      const input = document.getElementById("keywordInput").value.trim().toUpperCase();
-      const errorMsg = document.getElementById("errorMsg");
-      
-      if (input === "TItiN") {
-        // Redirect ke halaman slideshow utama
+      const value = input.value.trim();
+
+      if (value === "TItiN") {   // harus persis TItiN
         window.location.href = "slideshow.html"; 
       } else {
         errorMsg.textContent = "WEB INI BUKAN BUAT LU KOCAK";
         errorMsg.style.display = "block";
+        input.value = "";   // reset input
+        input.focus();      // fokus lagi ke input
       }
     }
+
+    // Enter bisa langsung cek kata kunci
+    input.addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        checkKeyword();
+      }
+    });
   </script>
 </body>
 </html>
-
-
-
