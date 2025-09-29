@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kunci Masuk - Titin Ultah</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, system-ui;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('https://mawatu.co.id/wp-content/uploads/2024/07/sunset-Pulau-Padar.webp') no-repeat center center/cover;
+      color: #fff;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.15);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    h1 {
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 80%;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    button {
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+      font-weight: bold;
+    }
+    button:hover {
+      background: rgba(255,255,255,0.5);
+    }
+    .error {
+      color: red;
+      margin-top: 12px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Masukkan Kata Kunci</h1>
+    <p>Untuk melanjutkan, silakan masukkan kata kunci yang benar 👇</p>
+    <input type="text" id="keywordInput" placeholder="Ketik di sini..." />
+    <br>
+    <button onclick="checkKeyword()">Lanjut</button>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <script>
+    function checkKeyword() {
+      const input = document.getElementById("keywordInput").value.trim().toUpperCase();
+      const errorMsg = document.getElementById("errorMsg");
+      
+      if (input === "TITIN") {
+        // Redirect ke halaman slideshow utama
+        window.location.href = "slideshow.html"; 
+      } else {
+        errorMsg.textContent = "WEB INI BUKAN BUAT LU KOCAK";
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
