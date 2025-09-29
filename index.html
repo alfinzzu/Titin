@@ -235,11 +235,6 @@
       prevBtn.style.display = (index === 0) ? 'none' : 'inline-block';
       nextBtn.style.display = 'inline-block';
 
-      // Emoji untuk slide tertentu, 20 emoji per slide
-      if (index === 1) for(let i=0;i<20;i++) addEmoji('🥳');
-      if (index === 2) for(let i=0;i<20;i++) addEmoji('🎈');
-      if (index === 4) for(let i=0;i<20;i++) addEmoji('😑');
-      if (index === 5) for(let i=0;i<20;i++) addEmoji('🤬');
 
       // Animasi slide 6
       if (index === 6) {
@@ -298,4 +293,5 @@
     showSlide(current);
   </script>
 </body>
+
 </html>
